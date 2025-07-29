@@ -10,4 +10,7 @@ public class FindMaximumNumber {
         Optional<Integer> maxValue = numbers.stream().max(Integer::compareTo);
         System.out.println("Maximum number is : " +maxValue);
     }
+
+    // NOTE -> So when you pass Integer::compareTo to .max(...),
+    //it's like telling Java:"Compare the elements in natural (ascending) order — keep the largest."
 }

@@ -10,7 +10,8 @@ public class GroupByStringLength {
     public static void main(String[] args) {
 
         List<String> words = Arrays.asList("Ram","Krishna","Shiv");
-        Map<Integer,List<String>> groupByLength = words.stream().collect(Collectors.groupingBy(String::length));
+        Map<Integer,List<String>> groupByLength = words.stream()
+                                                  .collect(Collectors.groupingBy(String::length));
         System.out.println(groupByLength);
     }
 
