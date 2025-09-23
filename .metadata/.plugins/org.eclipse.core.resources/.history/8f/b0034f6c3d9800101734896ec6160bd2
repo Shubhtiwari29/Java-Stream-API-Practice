@@ -1,0 +1,29 @@
+package practice;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+// BELOW CODE CAN BE USED FOR FOLLOWING QUESTIONS ->
+//1) HOW TO FIND  FREQUENCY OF ELEMENTS FORM THE LIST USING STREAM API?   			OR
+//2) HOW TO GROUP ELEMENTS IN A LIST AND COUNT THEIR OCCURANCES? 					OR
+//3) HOW TO USE COLLECTORS.GROUPBY AND COLLECTORS.COUNTING TO CALCULATE ELEMNT      OR
+//		FREQUENCY IN A LIST?
+//4) HOW TO CREATE FREQUENCY MAP FROM A LIST OF STRING USING JAVA STREAM ?           OR
+//5) HOW TO USE STREAM API TO GENEREATE MAP OF ELEMENT FREQUENCY?
+
+
+public class FrequencyOfElement {
+
+	public static void main(String[] args) {
+	
+List<String> words = Arrays.asList("Apple", "Mango","Apple","Banana","Mango","Cherry");
+
+Map<String,Long> wordFrequency = words.stream()
+					.collect(Collectors.groupingBy(word -> word,Collectors.counting()));
+		
+System.out.println(wordFrequency);
+	}
+
+}

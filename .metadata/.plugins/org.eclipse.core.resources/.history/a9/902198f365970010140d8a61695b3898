@@ -1,0 +1,49 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class StremMain {
+
+    // NOTE List.of() CREATES  A IMMUTABLE LIST MEANS CANNOT BE MODIFIED. 'list1' IS IMMUTABLE OBJECT
+    // WITH THE HELP OF stream WE CAN PERFORM OPERATIONS ON THE COLLECTION, OBJECT
+    // STREAM IS AN INTERFACE, HENCE WE CANNOT CREATE AN OBJECT OF IT.
+
+    public static void main(String [] args){
+        System.out.println("Jai Shree Ram");
+
+        // CREAT A LIST AND FILTER ALL THE EVEN NUMBER FROM THE LIST
+        List<Integer> list1 = List.of(2,3,4,5,6,7,8, 50, 69, 90);
+        System.out.println(list1);
+        List<Integer> list2 = Arrays.asList(23,45,68,69,78);
+      //  System.out.println(list2);
+
+            // operations on List1 without stream
+        List<Integer> listEven = new ArrayList<>();
+        for (Integer i : list1){
+            if(i%2==0){
+                listEven.add(i);
+            }
+        }
+        System.out.println("List without stream : "+listEven);
+
+        // PERFORMING OPERATION USING STREAM
+
+//          Stream<Integer> stream =  list1.stream();
+//          List<Integer> newList = stream.filter(i-> i % 2 ==0).collect(Collectors.toList());
+//          System.out.println("New List using Stream : "+ newList);
+
+            // OR MORE BETTER PRACTICE TO DO SAME JOB
+
+//     List<Integer> newBetterList = list1.stream().filter(i-> i%2 ==0).collect(Collectors.toList());
+//        System.out.println("New much Better List : "+ newBetterList);
+
+        List<Integer> bigNumbers = list1.stream().filter(i-> i > 50).collect(Collectors.toList());
+        System.out.println("Number Greater than 50 from List1 : "+ bigNumbers);
+    }
+
+
+}

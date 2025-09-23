@@ -1,0 +1,14 @@
+# Eclipse metadata
+.metadata/
+.classpath
+.project
+.settings/
+
+# Build outputs
+bin/
+target/
+build/
+
+# Logs and temp
+*.log
+*.tmp

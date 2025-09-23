@@ -1,0 +1,31 @@
+package practice;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FlatternAListOfLists {
+
+	public static void main(String[] args) {
+
+		List<Integer> list1 = Arrays.asList(1,2,3);
+		List<Integer> list2 = Arrays.asList(4,5,6);
+		List<Integer> list3 = Arrays.asList(7,8,9);
+		
+	List<List<Integer>> listOfList = Arrays.asList(Arrays.asList(1,2,3),list2,list3);
+		
+		List<Integer> flatternList = listOfList.stream()
+											   .flatMap(List::stream)
+											   .collect(Collectors.toList());
+		
+		System.out.println("Flattern List : "+ flatternList);
+									
+
+	}
+/*	stream : Returns a sequential Stream with this collection as its source.
+flatMap: Returns a stream consisting of the results of replacing each element 
+	ofthis stream with the contents of a mapped stream produced 
+	by applyingthe provided mapping function to each element. 
+	Each mapped stream is closed after its contentshave been placed into this stream. (If a mapped stream is nullan empty stream is used, instead.) 	*/ 
+
+}

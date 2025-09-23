@@ -1,0 +1,22 @@
+package work;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CheckWordsStartingWith {
+
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList("Ram", "Brignath", "Raghav,", "Krishna", "Madhav", "Ramchandra");
+        List<String> wordsStartingWith_R = words.stream()
+                .filter(s -> s.startsWith("R") || s.startsWith("r"))
+                .collect(Collectors.toList());
+
+        if (!wordsStartingWith_R.isEmpty()) {
+            System.out.println("Words Startting with Letter R or r are : " + wordsStartingWith_R);
+        } else {
+            System.out.println("No word found starting with letter r or R");
+        }
+    }
+}
